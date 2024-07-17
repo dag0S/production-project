@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App } from "./App";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
+import { App } from "./app/App";
+import { MainPageAsync } from "./pages/MainPage/ui/MainPage.async";
+import { AboutPageAsync } from "./pages/AboutPage/ui/AboutPage.async";
 import { Suspense } from "react";
-import { ThemeProvider } from "./theme/ThemeProvider";
+import { ThemeProvider } from "app/providers/ThemeProvider";
+import { AboutPage } from "pages/AboutPage";
+import { MainPage } from "pages/MainPage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,7 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <Suspense fallback={<h3>Загрузка...</h3>}>
-            <MainPageAsync />
+            <MainPage />
           </Suspense>
         ),
       },
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<h3>Загрузка...</h3>}>
-            <AboutPageAsync />
+            <AboutPage />
           </Suspense>
         ),
       },

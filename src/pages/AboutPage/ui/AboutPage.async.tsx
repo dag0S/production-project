@@ -1,4 +1,3 @@
-import { resolve } from "path";
 import { lazy } from "react";
 
 export const AboutPageAsync = lazy(

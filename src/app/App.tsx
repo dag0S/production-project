@@ -1,9 +1,8 @@
 import { Link, Outlet } from "react-router-dom";
-import { Counter } from "./components/Counter";
-import { useTheme } from "./theme/useTheme";
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTheme } from "./providers/ThemeProvider";
 
 import "./styles/index.scss";
-import { classNames } from "./helpers/classNames/classNames";
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -17,7 +16,6 @@ export const App = () => {
         <Link to="/about">О сайте</Link>
       </div>
       <div>dfasdfasdfsafe</div>
-      <Counter />
       <Outlet />
     </div>
   );
