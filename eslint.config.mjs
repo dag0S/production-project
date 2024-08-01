@@ -12,6 +12,9 @@ export default [
   ...tseslint.configs.recommended,
   ...fixupConfigRules(pluginReactConfig),
   {
+    plugins: ["i18next"],
+  },
+  {
     rules: {
       "react/jsx-indent": [2, 2],
       indent: [2, 2],
@@ -23,6 +26,10 @@ export default [
       "no-unused-vars": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "react/jsx-props-no-spreading": "warn",
+      "i18next/no-literal-string": ["error", { markupOnly: true }],
     },
+  },
+  {
+    extends: ["plugin:i18next/recommended"],
   },
 ];
