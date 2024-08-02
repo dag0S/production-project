@@ -1,35 +1,25 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import { fixupConfigRules } from "@eslint/compat";
+import pluginReact from "eslint-plugin-react";
 
 export default [
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  ...fixupConfigRules(pluginReactConfig),
-  {
-    plugins: ["i18next"],
-  },
+  pluginReact.configs.flat.recommended,
   {
     rules: {
-      "react/jsx-indent": [2, 2],
-      indent: [2, 2],
+      // Чтобы не импортировать React
       "react/react-in-jsx-scope": "off",
-      "react/jsx-filename-extension": [
-        2,
-        { extensions: [".js", ".jsx", ".tsx"] },
-      ],
-      "no-unused-vars": "warn",
+      // Чтобы можно было создавать неиспользованные переменные
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "warn",
-      "react/jsx-props-no-spreading": "warn",
-      "i18next/no-literal-string": ["error", { markupOnly: true }],
+      // Кол-во пробелов в табе
+      "react/jsx-indent": [2, 2],
+      // Для пропсов
+      "react/prop-types": "off"
     },
-  },
-  {
-    extends: ["plugin:i18next/recommended"],
   },
 ];

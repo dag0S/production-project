@@ -1,26 +1,46 @@
 import { FC, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App } from "app/App";
+import { RoutePath } from "../config/routeConfig";
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
-import { RoutePath } from "../config/routeConfig";
+import { NotFoundPage } from "pages/NotFoundPage";
+import { PageLoader } from "widgets/pageLoader/ui/PageLoader";
+import { MainLayout } from "app/layouts/MainLayout";
+import { PageError } from "widgets/pageError/ui/PageError";
 
 const router = createBrowserRouter([
   {
     path: RoutePath.main,
+    errorElement: <PageError />,
     element: (
-      <Suspense fallback={<h3>Загрузка...</h3>}>
-        <App />
+      <Suspense fallback={<PageLoader />}>
+        <MainLayout />
       </Suspense>
     ),
     children: [
       {
         path: RoutePath.main,
-        element: <MainPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <MainPage />
+          </Suspense>
+        ),
       },
       {
         path: RoutePath.about,
-        element: <AboutPage />,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <AboutPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: RoutePath.not_found,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <NotFoundPage />
+          </Suspense>
+        ),
       },
     ],
   },

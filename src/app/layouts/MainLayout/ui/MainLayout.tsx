@@ -1,13 +1,11 @@
-import { FC, Suspense } from "react";
+import { FC, Suspense, useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTheme } from "./providers/ThemeProvider";
 import { Navbar } from "widgets/navbar";
 import { Sidebar } from "widgets/sidebar";
 
-import "./styles/index.scss";
-
-export const App: FC = () => {
+const MainLayout: FC = () => {
   const { theme } = useTheme();
 
   return (
@@ -24,3 +22,5 @@ export const App: FC = () => {
     </div>
   );
 };
+
+export default MainLayout;
