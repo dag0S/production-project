@@ -4,7 +4,7 @@ import { NavbarProps } from "./NavbarProps";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { AppLinkTheme } from "shared/ui/AppLink/AppLinkProps";
 
-import * as styles from "./Navbar.module.scss";
+import styles from "./Navbar.module.scss";
 
 export const Navbar: FC<NavbarProps> = () => {
   return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AppLinkProps, AppLinkTheme } from "./AppLinkProps";
 import { classNames } from "shared/lib/classNames/classNames";
 
-import * as styles from "./AppLink.module.scss";
+import styles from "./AppLink.module.scss";
 
 export const AppLink: FC<AppLinkProps> = ({
   children,

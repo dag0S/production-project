@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { ButtonProps } from "./ButtonProps";
-
-import * as styles from "./Button.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
+
+import styles from "./Button.module.scss";
 
 export const Button: FC<ButtonProps> = ({
   children,

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/button/Button";
 
-import * as styles from "./PageError.module.scss";
+import styles from "./PageError.module.scss";
 
 export const PageError: FC = () => {
   const { t } = useTranslation();
