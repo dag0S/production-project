@@ -28,5 +28,9 @@ jobs:
         run: npm run storybook:build
       - name: screenshot testing
         run: npm run test:ui:ci
-      - name: loki update
-        run: loki update --reactUri="file:./storybook-static"
+      - name: Archive screenshots
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v1
+        with:
+          name: design-system
+          path: .loki
