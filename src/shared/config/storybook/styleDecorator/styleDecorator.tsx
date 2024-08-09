@@ -7,7 +7,7 @@ export const StyleDecorator =
   (theme: Theme): Decorator =>
   // eslint-disable-next-line react/display-name
   (Story) => (
-    <ThemeProvider>
+    <ThemeProvider initialTheme={theme}>
       <div className={`app ${theme}`}>
         <Story />
       </div>

@@ -1,4 +1,4 @@
-import { FC, Suspense, useEffect } from "react";
+import { FC, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";

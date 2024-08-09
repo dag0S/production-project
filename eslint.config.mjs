@@ -10,6 +10,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
+    plugins: ["react-hooks"],
     rules: {
       // Чтобы не импортировать React
       "react/react-in-jsx-scope": "off",
@@ -19,7 +20,10 @@ export default [
       // Кол-во пробелов в табе
       "react/jsx-indent": [2, 2],
       // Для пропсов
-      "react/prop-types": "off"
+      "react/prop-types": "off",
+      // react-hooks
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
     },
   },
 ];
