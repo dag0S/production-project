@@ -63,7 +63,7 @@ export const Modal: FC<ModalProps> = ({
       clearTimeout(timerRef.current);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen]);
 
   return (
     <Portal>
