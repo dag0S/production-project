@@ -3,12 +3,6 @@
 @import "./themes/normal";
 @import "./themes/dark";
 
-body {
-  font: var(--font-m);
-  color: var(--primary-color);
-  background: var(--bg-color);
-}
-
 .app {
   font: var(--font-m);
   color: var(--primary-color);

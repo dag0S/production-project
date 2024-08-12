@@ -6,26 +6,6 @@
   pointer-events: none;
 }
 
-.modal.dark {
-  --bg-color: #0e0e75;
-  --inverted-bg-color: #e8e8ea;
-
-  --primary-color: #049604;
-  --secondary-color: #04ff04;
-  --inverted-primary-color: #0452ff;
-  --inverted-secondary-color: #0232c2;
-}
-
-.modal.light {
-  --bg-color: #e8e8ea;
-  --inverted-bg-color: #0e0e75;
-
-  --primary-color: #0232c2;
-  --secondary-color: #0452ff;
-  --inverted-primary-color: #04ff04;
-  --inverted-secondary-color: #049604;
-}
-
 .overlay {
   width: 100%;
   height: 100%;
