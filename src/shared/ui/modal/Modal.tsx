@@ -20,10 +20,18 @@ export const Modal: FC<ModalProps> = ({
   className,
   isOpen,
   onClose,
+  lazy,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const mods: Record<string, boolean> = {
     [styles["opened"]]: isOpen,
@@ -63,6 +71,10 @@ export const Modal: FC<ModalProps> = ({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

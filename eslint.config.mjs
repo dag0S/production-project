@@ -20,6 +20,8 @@ export default [
       "react/jsx-indent": [2, 2],
       // Для пропсов
       "react/prop-types": "off",
+      // memo
+      "react/display-name": "off",
     },
   },
 ];
