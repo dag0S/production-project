@@ -4,8 +4,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { LoginForm } from "../loginForm/LoginForm";
 import { LoginModalProps } from "./LoginModalProps";
 
-import styles from "./LoginModal.module.scss";
-
 export const LoginModal: FC<LoginModalProps> = ({
   className,
   isOpen,
@@ -13,7 +11,7 @@ export const LoginModal: FC<LoginModalProps> = ({
 }) => {
   return (
     <Modal
-      className={classNames("")}
+      className={classNames("", {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       lazy
