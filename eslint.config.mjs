@@ -22,6 +22,8 @@ export default [
       "react/prop-types": "off",
       // memo
       "react/display-name": "off",
+      // разрешает any
+      "@typescript-eslint/no-explicit-any": "off"
     },
   },
 ];
