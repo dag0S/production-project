@@ -1,8 +1,8 @@
 import { FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { classNames } from "shared/lib/classNames/classNames";
 import { NavbarProps } from "./NavbarProps";
+import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/button/Button";
 import { ButtonTheme } from "shared/ui/button/ButtonProps";
 import { LoginModal } from "features/authByUsername";
