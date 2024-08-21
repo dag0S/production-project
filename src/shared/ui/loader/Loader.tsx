@@ -5,5 +5,9 @@ import { LoaderProps } from "./LoaderProps";
 import styles from "./Loader.module.scss";
 
 export const Loader: FC<LoaderProps> = ({ className }) => {
-  return <span className={classNames(styles["loader"], {}, [className])} />;
+  return (
+    <div className={styles["container"]}>
+      <span className={classNames(styles["loader"], {}, [className])} />
+    </div>
+  );
 };

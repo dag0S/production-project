@@ -23,6 +23,12 @@ export function buildPlugin({
     }),
   ];
 
+  // plugins.push(
+  //   new BundleAnalyzerPlugin({
+  //     openAnalyzer: false,
+  //   })
+  // );
+
   if (isDev) {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),

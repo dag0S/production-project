@@ -6,8 +6,9 @@ import { createReduxStore } from "../config/store";
 export const StoreProvider: FC<StoreProviderProps> = ({
   children,
   initialState,
+  asyncReducers,
 }) => {
-  const store = createReduxStore(initialState);
+  const store = createReduxStore(initialState, asyncReducers);
 
   return <Provider store={store}>{children}</Provider>;
 };

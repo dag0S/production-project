@@ -14,7 +14,7 @@ export const Navbar: FC<NavbarProps> = () => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -25,9 +25,9 @@ export const Navbar: FC<NavbarProps> = () => {
   }, []);
 
   const handleLogout = useCallback(() => {
-    dispatch(userActions.logout())
+    dispatch(userActions.logout());
     setIsAuthModal(false);
-  }, [])
+  }, []);
 
   if (authData) {
     return (
@@ -52,7 +52,9 @@ export const Navbar: FC<NavbarProps> = () => {
       >
         {t("Войти")}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
