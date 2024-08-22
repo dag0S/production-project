@@ -7,6 +7,7 @@ import { NotFoundPage } from "pages/NotFoundPage";
 import { PageLoader } from "widgets/pageLoader/ui/PageLoader";
 import { MainLayout } from "app/layouts/MainLayout";
 import { PageError } from "widgets/pageError/ui/PageError";
+import { ProfilePage } from "pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: RoutePath.profile,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <ProfilePage />
+          </Suspense>
+        ),
+      },
+      // last
       {
         path: RoutePath.not_found,
         element: (

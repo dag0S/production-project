@@ -5,5 +5,15 @@
     { "id": "3", "title": "json-server 1", "views": 200 },
     { "id": "4", "title": "json-server 1", "views": 200 }
   ],
-  "users": [{ "id": 1, "username": "admin", "password": "123" }]
+  "users": [{ "id": 1, "username": "admin", "password": "123" }],
+  "profile": {
+    "firstName": "Данила",
+    "lastName": "Государев",
+    "age": 20,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://sun1-97.userapi.com/s/v1/ig2/AgUTsp-p5i3FfYBkbaC3gVLe1WDCM_s2ahleSecRsiNjS2zFVJcPS9eEmS21UA8_PCRiwqqWo0HpRtXD9sEIppWk.jpg?quality=95&crop=0,49,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=200x200"
+  }
 }

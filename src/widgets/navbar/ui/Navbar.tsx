@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from "react";
+import { FC, memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { NavbarProps } from "./NavbarProps";
@@ -10,7 +10,7 @@ import { getUserAuthData, userActions } from "entities/user";
 
 import styles from "./Navbar.module.scss";
 
-export const Navbar: FC<NavbarProps> = () => {
+export const Navbar: FC<NavbarProps> = memo(() => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
@@ -57,4 +57,4 @@ export const Navbar: FC<NavbarProps> = () => {
       )}
     </div>
   );
-};
+});
