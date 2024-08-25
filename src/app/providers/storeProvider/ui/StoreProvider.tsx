@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { StoreProviderProps } from "./StoreProviderProps";
 import { Provider } from "react-redux";
+import { StoreProviderProps } from "./StoreProviderProps";
 import { createReduxStore } from "../config/store";
 
 export const StoreProvider: FC<StoreProviderProps> = ({

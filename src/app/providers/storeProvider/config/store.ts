@@ -3,6 +3,7 @@ import { StateSchema } from "./StateSchema";
 import { counterReducer } from "entities/counter";
 import { userReducer } from "entities/user";
 import { createReducerManager } from "./reducerManager";
+import { $api } from "shared/api/api";
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -19,6 +20,14 @@ export function createReduxStore(
   const store = configureStore<StateSchema>({
     reducer: reducerManager.reduce,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+          },
+        },
+      }),
   });
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
