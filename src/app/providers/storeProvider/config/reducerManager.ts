@@ -16,6 +16,8 @@ export function createReducerManager(
         keysToRemove.forEach((key) => delete state[key]);
         keysToRemove = [];
       }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       return combinedReducer(state, action);
     },
     add: (key: StateSchemaKey, reducer: Reducer) => {

@@ -2,6 +2,6 @@ import { SidebarItemType } from "../../model/items";
 
 export interface SidebarItemProps {
   className?: string;
-  item?: SidebarItemType;
+  item: SidebarItemType;
   collapsed: boolean;
 }

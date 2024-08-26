@@ -16,9 +16,9 @@ import { getLoginError } from "../../model/selectors/getLoginError/getLoginError
 import { DynamicModuleLoader } from "shared/lib/components/dynamicModuleLoader/DynamicModuleLoader";
 import { ReducersList } from "shared/lib/components/dynamicModuleLoader/DynamicModuleLoaderProps";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { LoginFormProps } from "./LoginFormProps";
 
 import styles from "./LoginForm.module.scss";
-import { LoginFormProps } from "./LoginFormProps";
 
 const initialReducers: ReducersList = {
   loginFrom: loginReducer,
@@ -48,7 +48,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
 
   const handleLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
-    if (result.meta.requestStatus === "rejected") {
+    if (result.meta.requestStatus === "rejected" && onSuccess) {
       onSuccess();
     }
   }, [onSuccess, dispatch, username, password]);

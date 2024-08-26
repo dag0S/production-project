@@ -17,8 +17,10 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rootReducers);
 
-  const store = configureStore<StateSchema>({
-    reducer: reducerManager.reduce,
+  const store = configureStore({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({

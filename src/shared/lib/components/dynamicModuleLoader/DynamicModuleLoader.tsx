@@ -5,6 +5,7 @@ import {
   ReducersListEntry,
 } from "./DynamicModuleLoaderProps";
 import { ReduxStoreWithManager } from "app/providers/storeProvider";
+import { StateSchemaKey } from "app/providers/storeProvider/config/StateSchema";
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   children,
@@ -15,14 +16,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer);
       dispatch({ type: `@INIT ${name} reducer` });
     });
     return () => {
-      Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
+      Object.entries(reducers).forEach(([name]) => {
         if (removeAfterUnmount) {
-          store.reducerManager.remove(name);
+          store.reducerManager.remove(name as StateSchemaKey);
           dispatch({ type: `@DESTROY ${name} reducer` });
         }
       });

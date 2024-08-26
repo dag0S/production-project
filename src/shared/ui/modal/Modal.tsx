@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import { ModalProps } from "./ModalProps";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Portal } from "../portal/Portal";
 import { useTheme } from "app/providers/ThemeProvider";
 
@@ -33,7 +33,7 @@ export const Modal: FC<ModalProps> = ({
     }
   }, [isOpen]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles["opened"]]: isOpen,
     [styles["is-closing"]]: isClosing,
   };

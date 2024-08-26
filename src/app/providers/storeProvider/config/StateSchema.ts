@@ -1,4 +1,9 @@
-import { EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
+import {
+  Dispatch,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
+} from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { CounterSchema } from "entities/counter";
 import { ProfileSchema } from "entities/profile";
