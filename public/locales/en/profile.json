@@ -2,5 +2,8 @@
   "Профиль": "Profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your first name",
-  "Ваша фамилия": "Your last name"
+  "Ваша фамилия": "Your last name",
+  "Произошла ошибка при загрузки данных": "An error occurred while loading data",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Отменить": "Cancel"
 }

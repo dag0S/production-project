@@ -12,11 +12,13 @@ export const Input: FC<InputProps> = memo(
     type = "text",
     placeholder,
     autoFocus,
+    readonly,
     ...otherProps
   }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
     const ref = useRef<HTMLInputElement>(null);
+    const isCaretVisible = isFocused && !readonly;
 
     useEffect(() => {
       if (autoFocus) {
@@ -44,7 +46,13 @@ export const Input: FC<InputProps> = memo(
     };
 
     return (
-      <div className={classNames(styles["input-wrapper"], {}, [className])}>
+      <div
+        className={classNames(
+          styles["input-wrapper"],
+          { [styles["readonly"]]: readonly },
+          [className]
+        )}
+      >
         {placeholder && <div>{`${placeholder}>`}</div>}
         <div className={styles["caret-wrapper"]}>
           <input
@@ -56,9 +64,10 @@ export const Input: FC<InputProps> = memo(
             onFocus={handlerFocus}
             onBlur={handlerBlur}
             onSelect={handlerSelect}
+            readOnly={readonly}
             {...otherProps}
           />
-          {isFocused && (
+          {isCaretVisible && (
             <span
               className={styles["caret"]}
               style={{

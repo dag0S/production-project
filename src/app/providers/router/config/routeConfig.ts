@@ -1,3 +1,9 @@
+import { RouteObject } from "react-router-dom";
+
+export type AppRoutesProps = RouteObject & {
+  authOnly?: boolean
+}
+
 export enum AppRoutes {
   MAIN = "main",
   ABOUT = "about",

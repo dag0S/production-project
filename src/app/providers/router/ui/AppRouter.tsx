@@ -8,54 +8,61 @@ import { PageLoader } from "widgets/pageLoader/ui/PageLoader";
 import { MainLayout } from "app/layouts/MainLayout";
 import { PageError } from "widgets/pageError/ui/PageError";
 import { ProfilePage } from "pages/ProfilePage";
-
-const router = createBrowserRouter([
-  {
-    path: RoutePath.main,
-    errorElement: <PageError />,
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <MainLayout />
-      </Suspense>
-    ),
-    children: [
-      {
-        path: RoutePath.main,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <MainPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: RoutePath.about,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <AboutPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: RoutePath.profile,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <ProfilePage />
-          </Suspense>
-        ),
-      },
-      // last
-      {
-        path: RoutePath.not_found,
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <NotFoundPage />
-          </Suspense>
-        ),
-      },
-    ],
-  },
-]);
+import { useSelector } from "react-redux";
+import { getUserAuthData } from "entities/user";
+import { PrivateRoute } from "shared/lib/privateRoute/PrivateRoute";
 
 export const AppRouter: FC = () => {
+  const isAuth = useSelector(getUserAuthData);
+
+  const router = createBrowserRouter([
+    {
+      path: RoutePath.main,
+      errorElement: <PageError />,
+      element: (
+        <Suspense fallback={<PageLoader />}>
+          <MainLayout />
+        </Suspense>
+      ),
+      children: [
+        {
+          path: RoutePath.main,
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <MainPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: RoutePath.about,
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <AboutPage />
+            </Suspense>
+          ),
+        },
+        {
+          path: RoutePath.profile,
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <PrivateRoute isAuthenticated={!!isAuth}>
+                <ProfilePage />
+              </PrivateRoute>
+            </Suspense>
+          ),
+        },
+        // last
+        {
+          path: RoutePath.not_found,
+          element: (
+            <Suspense fallback={<PageLoader />}>
+              <NotFoundPage />
+            </Suspense>
+          ),
+        },
+      ],
+    },
+  ]);
+
   return <RouterProvider router={router} />;
 };
