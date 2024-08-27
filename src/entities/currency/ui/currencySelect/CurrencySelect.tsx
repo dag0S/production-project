@@ -13,7 +13,7 @@ const options = [
 
 export const CurrencySelect: FC<CurrencySelectProps> = memo(
   ({ className, value, onChange, readonly }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
 
     const handlerOnChange = useCallback(
       (value: string) => {

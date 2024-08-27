@@ -16,7 +16,7 @@ const options = [
 
 export const CountrySelect: FC<CountrySelectProps> = memo(
   ({ className, value, onChange, readonly }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
 
     const handlerOnChange = useCallback(
       (value: string) => {

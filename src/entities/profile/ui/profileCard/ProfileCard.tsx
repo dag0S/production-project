@@ -82,13 +82,13 @@ export const ProfileCard: FC<ProfileCardProps> = ({
         />
         <Input
           value={data?.lastName}
-          placeholder={t("Ваше фамилия")}
+          placeholder={t("Ваша фамилия")}
           onChange={onChangeLastName}
           readonly={readonly}
         />
         <Input
           value={data?.age}
-          placeholder={t("Ваше возраст")}
+          placeholder={t("Ваш возраст")}
           onChange={onChangeAge}
           readonly={readonly}
         />
