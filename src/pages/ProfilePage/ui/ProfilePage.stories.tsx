@@ -5,6 +5,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/storeDecorator/storeDecorator";
 import { Currency } from "entities/currency";
 import { Country } from "entities/country";
+import avatar from "shared/assets/tests/storybook.jpg";
 
 const meta = {
   title: "pages/ProfilePage",
@@ -18,18 +19,16 @@ export const Light: Story = {
   decorators: [
     StoreDecorator({
       profile: {
-        data: {
+        form: {
           firstName: "Данила",
           lastName: "Государев",
           age: 20,
-          currency: Currency.RUB,
-          country: Country.Russia,
           city: "Moscow",
+          country: Country.Russia,
+          currency: Currency.RUB,
           username: "dag0S",
-          avatar: "www",
+          avatar,
         },
-        error: "",
-        isLoading: false,
       },
     }),
   ],
@@ -40,18 +39,16 @@ export const Dark: Story = {
     StyleDecorator(Theme.DARK),
     StoreDecorator({
       profile: {
-        data: {
+        form: {
           firstName: "Данила",
           lastName: "Государев",
           age: 20,
-          currency: Currency.RUB,
-          country: Country.Russia,
           city: "Moscow",
+          country: Country.Russia,
+          currency: Currency.RUB,
           username: "dag0S",
-          avatar: "www",
+          avatar,
         },
-        error: "",
-        isLoading: false,
       },
     }),
   ],
