@@ -4,65 +4,83 @@ import { RoutePath } from "../config/routeConfig";
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
-import { PageLoader } from "widgets/pageLoader/ui/PageLoader";
-import { MainLayout } from "app/layouts/MainLayout";
-import { PageError } from "widgets/pageError/ui/PageError";
+import { ArticlesPage } from "pages/ArticlesPage";
+import { ArticlesDetailsPage } from "pages/ArticlesDetailsPage";
 import { ProfilePage } from "pages/ProfilePage";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "entities/user";
+import { PageLoader } from "widgets/pageLoader/ui/PageLoader";
+import { PageError } from "widgets/pageError/ui/PageError";
+import { MainLayout } from "app/layouts/MainLayout";
 import { PrivateRoute } from "shared/lib/privateRoute/PrivateRoute";
 
+const router = createBrowserRouter([
+  {
+    path: RoutePath.main,
+    errorElement: <PageError />,
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <MainLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: RoutePath.main,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <MainPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: RoutePath.about,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <AboutPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: RoutePath.profile,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          </Suspense>
+        ),
+      },
+      {
+        path: RoutePath.articles,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <PrivateRoute>
+              <ArticlesPage />
+            </PrivateRoute>
+          </Suspense>
+        ),
+      },
+      {
+        path: `${RoutePath.articles_details}:id`,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <PrivateRoute>
+              <ArticlesDetailsPage />
+            </PrivateRoute>
+          </Suspense>
+        ),
+      },
+      // last
+      {
+        path: RoutePath.not_found,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <NotFoundPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
+
 export const AppRouter: FC = () => {
-  const isAuth = useSelector(getUserAuthData);
-
-  const router = createBrowserRouter([
-    {
-      path: RoutePath.main,
-      errorElement: <PageError />,
-      element: (
-        <Suspense fallback={<PageLoader />}>
-          <MainLayout />
-        </Suspense>
-      ),
-      children: [
-        {
-          path: RoutePath.main,
-          element: (
-            <Suspense fallback={<PageLoader />}>
-              <MainPage />
-            </Suspense>
-          ),
-        },
-        {
-          path: RoutePath.about,
-          element: (
-            <Suspense fallback={<PageLoader />}>
-              <AboutPage />
-            </Suspense>
-          ),
-        },
-        {
-          path: RoutePath.profile,
-          element: (
-            <Suspense fallback={<PageLoader />}>
-              <PrivateRoute isAuthenticated={!!isAuth}>
-                <ProfilePage />
-              </PrivateRoute>
-            </Suspense>
-          ),
-        },
-        // last
-        {
-          path: RoutePath.not_found,
-          element: (
-            <Suspense fallback={<PageLoader />}>
-              <NotFoundPage />
-            </Suspense>
-          ),
-        },
-      ],
-    },
-  ]);
-
   return <RouterProvider router={router} />;
 };
