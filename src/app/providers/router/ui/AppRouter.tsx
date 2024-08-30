@@ -52,9 +52,7 @@ const router = createBrowserRouter([
         path: RoutePath.articles,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <PrivateRoute>
-              <ArticlesPage />
-            </PrivateRoute>
+            <ArticlesPage />
           </Suspense>
         ),
       },
@@ -62,9 +60,7 @@ const router = createBrowserRouter([
         path: `${RoutePath.articles_details}:id`,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <PrivateRoute>
-              <ArticlesDetailsPage />
-            </PrivateRoute>
+            <ArticlesDetailsPage />
           </Suspense>
         ),
       },
