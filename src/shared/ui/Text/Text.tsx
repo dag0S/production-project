@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { TextAlign, TextProps, TextTheme } from "./TextProps";
+import { TextAlign, TextProps, TextSize, TextTheme } from "./TextProps";
 import { classNames } from "shared/lib/classNames/classNames";
 
 import styles from "./Text.module.scss";
@@ -11,6 +11,7 @@ export const Text: FC<TextProps> = memo(
     title,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
+    size = TextSize.M,
   }) => {
     return (
       <div
@@ -18,6 +19,7 @@ export const Text: FC<TextProps> = memo(
           className,
           styles[theme],
           styles[align],
+          styles[size],
         ])}
       >
         {title && <p className={styles["title"]}>{title}</p>}

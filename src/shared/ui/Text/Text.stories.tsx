@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "./Text";
 import { StyleDecorator } from "shared/config/storybook/styleDecorator/styleDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { TextTheme } from "./TextProps";
+import { TextSize, TextTheme } from "./TextProps";
 
 const meta = {
   title: "shared/Text",
@@ -57,6 +57,15 @@ export const onlyTitleDark: Story = {
 export const onlyTextDark: Story = {
   args: {
     text: "Description",
+  },
+  decorators: [StyleDecorator(Theme.DARK)],
+};
+
+export const SizeL: Story = {
+  args: {
+    title: "Title",
+    text: "Description",
+    size: TextSize.L
   },
   decorators: [StyleDecorator(Theme.DARK)],
 };

@@ -2,7 +2,7 @@
   min-height: 100%;
 }
 
-.skeleton-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -10,4 +10,16 @@
 
 .avatar {
   margin: 0 auto;
+}
+
+.article-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
