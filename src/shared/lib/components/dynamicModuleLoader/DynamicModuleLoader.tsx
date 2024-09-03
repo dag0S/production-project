@@ -2,7 +2,6 @@ import { FC, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 import {
   DynamicModuleLoaderProps,
-  ReducersListEntry,
 } from "./DynamicModuleLoaderProps";
 import { ReduxStoreWithManager } from "app/providers/storeProvider";
 import { StateSchemaKey } from "app/providers/storeProvider/config/StateSchema";
