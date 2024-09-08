@@ -1,5 +1,6 @@
-import { FC, memo, useCallback, useEffect } from "react";
+import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
   fetchProfileData,
   getProfileError,
@@ -21,6 +22,7 @@ import { Country } from "entities/country";
 import { Text } from "shared/ui/text/Text";
 import { TextTheme } from "shared/ui/text/TextProps";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -34,6 +36,7 @@ const ProfilePage: FC = memo(() => {
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
   const { t } = useTranslation("profile");
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t("Серверная ошибка"),
@@ -43,11 +46,11 @@ const ProfilePage: FC = memo(() => {
     [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const handlerOnChangeFirstName = useCallback(
     (value?: string) => {

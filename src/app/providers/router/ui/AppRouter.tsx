@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: RoutePath.profile,
+        path: `${RoutePath.profile}:id`,
         element: (
           <Suspense fallback={<PageLoader />}>
             <PrivateRoute>

@@ -2,6 +2,6 @@ import { IComment } from "entities/comment/model/types/comment";
 
 export interface CommentItemProps {
   className?: string;
-  comment: IComment;
+  comment?: IComment;
   isLoading?: boolean;
 }

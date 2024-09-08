@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -12,11 +12,13 @@ import {
   getArticleComments,
 } from "../../model/slices/ArticleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
-
-import styles from "./ArticlesDetailsPage.module.scss";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { AddNewComment } from "features/addNewComment";
+import { addCommentForArticle } from "pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
+
+import styles from "./ArticlesDetailsPage.module.scss";
 
 const reducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentReducer,
@@ -28,6 +30,13 @@ const ArticlesDetailsPage: FC = () => {
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const dispatch = useAppDispatch();
+
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch]
+  );
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(Number(id)));
@@ -45,6 +54,7 @@ const ArticlesDetailsPage: FC = () => {
           className={styles["articles-details-page__comment-title"]}
           title={t("Комментарии")}
         />
+        <AddNewComment onSendComment={onSendComment} />
         <CommentList
           isLoading={isLoading}
           className={styles["articles-details-page__comment-list"]}

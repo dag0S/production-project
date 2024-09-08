@@ -1,5 +1,4 @@
 import {
-  Dispatch,
   EnhancedStore,
   Reducer,
   ReducersMapObject,
@@ -9,6 +8,7 @@ import { ArticleDetailsSchema } from "entities/article";
 import { CounterSchema } from "entities/counter";
 import { ProfileSchema } from "entities/profile";
 import { UserSchema } from "entities/user";
+import { addNewCommentSchema } from "features/addNewComment";
 import { LoginSchema } from "features/authByUsername";
 import { ArticleDetailsCommentsSchema } from "pages/ArticlesDetailsPage";
 
@@ -21,6 +21,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  addNewComment?: addNewCommentSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

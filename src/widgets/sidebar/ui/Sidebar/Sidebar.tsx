@@ -9,9 +9,11 @@ import { SidebarItemsList } from "../../model/items";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 import styles from "./Sidebar.module.scss";
+import { useParams } from "react-router-dom";
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const [collapsed, setCollapsed] = useState(false);
+  const { id } = useParams<{ id: string }>();
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);

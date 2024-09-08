@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "username": "admin",
+      "username": "dag0S",
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://sun1-97.userapi.com/s/v1/ig2/AgUTsp-p5i3FfYBkbaC3gVLe1WDCM_s2ahleSecRsiNjS2zFVJcPS9eEmS21UA8_PCRiwqqWo0HpRtXD9sEIppWk.jpg?quality=95&crop=0,49,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=200x200"
@@ -15,16 +15,30 @@
       "avatar": "https://avatars.mds.yandex.net/i?id=99d9da0f1185e8a917a8306ffb754240_l-12569562-images-thumbs&n=13"
     }
   ],
-  "profile": {
-    "firstName": "Данила",
-    "lastName": "Государев",
-    "age": 20,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "dag0S",
-    "avatar": "https://sun1-97.userapi.com/s/v1/ig2/AgUTsp-p5i3FfYBkbaC3gVLe1WDCM_s2ahleSecRsiNjS2zFVJcPS9eEmS21UA8_PCRiwqqWo0HpRtXD9sEIppWk.jpg?quality=95&crop=0,49,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=200x200"
-  },
+  "profile": [
+    {
+      "id": 1,
+      "firstName": "Данила",
+      "lastName": "Государев",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "dag0S",
+      "avatar": "https://sun1-97.userapi.com/s/v1/ig2/AgUTsp-p5i3FfYBkbaC3gVLe1WDCM_s2ahleSecRsiNjS2zFVJcPS9eEmS21UA8_PCRiwqqWo0HpRtXD9sEIppWk.jpg?quality=95&crop=0,49,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=200x200"
+    },
+    {
+      "id": 2,
+      "firstName": "Никита",
+      "lastName": "Горбунов",
+      "age": 15,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://avatars.mds.yandex.net/i?id=99d9da0f1185e8a917a8306ffb754240_l-12569562-images-thumbs&n=13"
+    }
+  ],
   "articles": [
     {
       "id": 1,
@@ -33,7 +47,9 @@
       "img": "https://i.pinimg.com/736x/76/e4/cf/76e4cff13fa43c636748295627a93fde.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": 1,
@@ -114,6 +130,30 @@
       "text": "some comment 3",
       "articleId": 1,
       "userId": 1
+    },
+    {
+      "articleId": 1,
+      "userId": 1,
+      "text": "123",
+      "id": 4
+    },
+    {
+      "articleId": 1,
+      "userId": 1,
+      "text": "123",
+      "id": 5
+    },
+    {
+      "articleId": 1,
+      "userId": 2,
+      "text": "123",
+      "id": 6
+    },
+    {
+      "articleId": 1,
+      "userId": 2,
+      "text": "hello",
+      "id": 7
     }
   ]
 }
