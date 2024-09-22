@@ -14,6 +14,10 @@ const data: IArticle = {
   img: "https://i.pinimg.com/736x/76/e4/cf/76e4cff13fa43c636748295627a93fde.jpg",
   views: 1022,
   createdAt: "26.02.2022",
+  user: {
+    id: 1,
+    username: "Dag0S",
+  },
   type: [ArticleType.IT],
   blocks: [
     {
@@ -105,8 +109,8 @@ describe("getArticleDetailsData", () => {
 
   test("should return error", () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetails: { error: 'error' },
+      articleDetails: { error: "error" },
     };
-    expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
+    expect(getArticleDetailsError(state as StateSchema)).toEqual("error");
   });
 });

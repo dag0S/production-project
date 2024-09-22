@@ -1,5 +1,5 @@
 import { FC, memo, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ArticleDetails } from "entities/article";
@@ -16,7 +16,10 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { AddNewComment } from "features/addNewComment";
-import { addCommentForArticle } from "pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
+import { Button } from "shared/ui/button/Button";
+import { ButtonTheme } from "shared/ui/button/ButtonProps";
+import { RoutePath } from "app/providers/router/config/routeConfig";
 
 import styles from "./ArticlesDetailsPage.module.scss";
 
@@ -30,6 +33,7 @@ const ArticlesDetailsPage: FC = () => {
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -37,6 +41,10 @@ const ArticlesDetailsPage: FC = () => {
     },
     [dispatch]
   );
+
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(Number(id)));
@@ -49,6 +57,9 @@ const ArticlesDetailsPage: FC = () => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={styles["articles-details-page"]}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t("Назад к списку")}
+        </Button>
         <ArticleDetails id={Number(id)} />
         <Text
           className={styles["articles-details-page__comment-title"]}

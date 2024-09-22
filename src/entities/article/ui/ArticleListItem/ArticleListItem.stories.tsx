@@ -1,15 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ArticlesDetailsPage from "./ArticlesDetailsPage";
-import { StoreDecorator } from "shared/config/storybook/storeDecorator/storeDecorator";
-import {
-  ArticleBlockType,
-  ArticleType,
-  IArticle,
-} from "entities/article/model/types/article";
+import { ArticleListItem } from "./ArticleListItem";
+import { ArticleView, IArticle } from "../../model/types/article";
 
-const article: IArticle = {
+const article = {
   id: 1,
-  title: "Javascript news",
+  title: "Javascript news, fsdf sefse,f sef sefsefse fsef",
   subtitle: "Что нового в JS за 2022 год?",
   img: "https://i.pinimg.com/736x/76/e4/cf/76e4cff13fa43c636748295627a93fde.jpg",
   views: 1022,
@@ -17,12 +12,14 @@ const article: IArticle = {
   user: {
     id: 1,
     username: "Dag0S",
+    avatar:
+      "https://sun1-97.userapi.com/s/v1/ig2/AgUTsp-p5i3FfYBkbaC3gVLe1WDCM_s2ahleSecRsiNjS2zFVJcPS9eEmS21UA8_PCRiwqqWo0HpRtXD9sEIppWk.jpg?quality=95&crop=0,49,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=200x200",
   },
-  type: [ArticleType.IT],
+  type: ["IT", "SCIENCE", "POLITICS", "ECONOMICS"],
   blocks: [
     {
       id: 1,
-      type: ArticleBlockType.TEXT,
+      type: "TEXT",
       title: "Заголовок этого блока",
       paragraphs: [
         "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
@@ -32,12 +29,12 @@ const article: IArticle = {
     },
     {
       id: 4,
-      type: ArticleBlockType.CODE,
+      type: "CODE",
       code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
     },
     {
       id: 5,
-      type: ArticleBlockType.TEXT,
+      type: "TEXT",
       title: "Заголовок этого блока",
       paragraphs: [
         "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
@@ -46,18 +43,18 @@ const article: IArticle = {
     },
     {
       id: 2,
-      type: ArticleBlockType.IMAGE,
+      type: "IMAGE",
       src: "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
       title: "Рисунок 1 - скриншот сайта",
     },
     {
       id: 3,
-      type: ArticleBlockType.CODE,
+      type: "CODE",
       code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
     },
     {
       id: 7,
-      type: ArticleBlockType.TEXT,
+      type: "TEXT",
       title: "Заголовок этого блока",
       paragraphs: [
         "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
@@ -66,35 +63,39 @@ const article: IArticle = {
     },
     {
       id: 8,
-      type: ArticleBlockType.IMAGE,
+      type: "IMAGE",
       src: "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
       title: "Рисунок 1 - скриншот сайта",
     },
     {
       id: 9,
-      type: ArticleBlockType.TEXT,
+      type: "TEXT",
       title: "Заголовок этого блока",
       paragraphs: [
         "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
       ],
     },
   ],
-};
+} as IArticle;
 
 const meta = {
-  title: "pages/ArticlesDetailsPage",
-  component: ArticlesDetailsPage,
-} satisfies Meta<typeof ArticlesDetailsPage>;
+  title: "entities/Article/ArticleListItem",
+  component: ArticleListItem,
+} satisfies Meta<typeof ArticleListItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-      },
-    }),
-  ],
+export const BIG: Story = {
+  args: {
+    view: ArticleView.BIG,
+    article,
+  },
+};
+
+export const SMALL: Story = {
+  args: {
+    view: ArticleView.SMALL,
+    article,
+  },
 };
