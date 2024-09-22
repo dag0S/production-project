@@ -1,4 +1,4 @@
-import { SidebarItemType } from "../../model/items";
+import { SidebarItemType } from "../../model/types/sidebar";
 
 export interface SidebarItemProps {
   className?: string;
