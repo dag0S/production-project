@@ -11,6 +11,7 @@ import { UserSchema } from "entities/user";
 import { addNewCommentSchema } from "features/addNewComment";
 import { LoginSchema } from "features/authByUsername";
 import { ArticleDetailsCommentsSchema } from "pages/ArticlesDetailsPage";
+import { articlesPageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -22,6 +23,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addNewComment?: addNewCommentSchema;
+  articlesPage?: articlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
