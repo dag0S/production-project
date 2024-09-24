@@ -23,6 +23,7 @@ import { Text } from "shared/ui/text/Text";
 import { TextTheme } from "shared/ui/text/TextProps";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Page } from "shared/ui/page/Page";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -110,29 +111,31 @@ const ProfilePage: FC = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <ProfilePageHeader />
-      {validateErrors?.length &&
-        validateErrors.map((err) => (
-          <Text
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslates[err]}
-            key={err}
-          />
-        ))}
-      <ProfileCard
-        data={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstName={handlerOnChangeFirstName}
-        onChangeLastName={handlerOnChangeLastName}
-        onChangeAge={handlerOnChangeAge}
-        onChangeCity={handlerOnChangeCity}
-        onChangeUsername={handlerOnChangeUsername}
-        onChangeAvatar={handlerOnChangeAvatar}
-        onChangeCurrency={handlerOnChangeCurrency}
-        onChangeCountry={handlerOnChangeCountry}
-      />
+      <Page>
+        <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[err]}
+              key={err}
+            />
+          ))}
+        <ProfileCard
+          data={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstName={handlerOnChangeFirstName}
+          onChangeLastName={handlerOnChangeLastName}
+          onChangeAge={handlerOnChangeAge}
+          onChangeCity={handlerOnChangeCity}
+          onChangeUsername={handlerOnChangeUsername}
+          onChangeAvatar={handlerOnChangeAvatar}
+          onChangeCurrency={handlerOnChangeCurrency}
+          onChangeCountry={handlerOnChangeCountry}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 });

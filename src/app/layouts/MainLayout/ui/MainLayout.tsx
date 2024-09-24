@@ -21,9 +21,7 @@ const MainLayout: FC = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <div className="page-wrapper">
-            <Outlet />
-          </div>
+          <Outlet />
         </div>
       </Suspense>
     </div>

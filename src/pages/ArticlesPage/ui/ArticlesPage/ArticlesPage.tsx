@@ -17,6 +17,8 @@ import {
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { ArticleViewSelector } from "features/articleViewSelector";
+import { Page } from "shared/ui/page/Page";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -32,9 +34,17 @@ const ArticlesPage: FC = () => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(
+      fetchArticlesList({
+        page: 1,
+      })
+    );
   });
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
   const onChangeView = useCallback(
     (view: ArticleView) => {
@@ -45,10 +55,10 @@ const ArticlesPage: FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={styles["article-page"]}>
+      <Page className={styles["article-page"]} onScrollEnd={onLoadNextPart}>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

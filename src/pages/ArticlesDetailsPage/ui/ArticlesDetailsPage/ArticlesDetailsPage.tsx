@@ -20,6 +20,7 @@ import { addCommentForArticle } from "../../model/services/addCommentForArticle/
 import { Button } from "shared/ui/button/Button";
 import { ButtonTheme } from "shared/ui/button/ButtonProps";
 import { RoutePath } from "app/providers/router/config/routeConfig";
+import { Page } from "shared/ui/page/Page";
 
 import styles from "./ArticlesDetailsPage.module.scss";
 
@@ -56,7 +57,7 @@ const ArticlesDetailsPage: FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={styles["articles-details-page"]}>
+      <Page className={styles["articles-details-page"]}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t("Назад к списку")}
         </Button>
@@ -71,7 +72,7 @@ const ArticlesDetailsPage: FC = () => {
           className={styles["articles-details-page__comment-list"]}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
