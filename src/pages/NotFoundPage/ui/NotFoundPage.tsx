@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { Page } from "shared/ui/page/Page";
+import { Page } from "widgets/page";
 
 import styles from "./NotFoundPage.module.scss";
 

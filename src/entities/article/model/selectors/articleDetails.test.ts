@@ -85,6 +85,7 @@ describe("getArticleDetailsData", () => {
   test("should return data", () => {
     const state: StateSchema = {
       counter: { value: 1 },
+      scrollSave: { scroll: {} },
       user: {},
       articleDetails: {
         data,

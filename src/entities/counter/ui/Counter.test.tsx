@@ -5,14 +5,22 @@ import { Counter } from "./Counter";
 describe("Counter", () => {
   test("test render", () => {
     componentRender(<Counter />, {
-      initialState: { counter: { value: 10 }, user: {} },
+      initialState: {
+        counter: { value: 10 },
+        user: {},
+        scrollSave: { scroll: {} },
+      },
     });
     expect(screen.getByTestId("value-title")).toHaveTextContent("10");
   });
 
   test("decrement", () => {
     componentRender(<Counter />, {
-      initialState: { counter: { value: 10 }, user: {} },
+      initialState: {
+        counter: { value: 10 },
+        user: {},
+        scrollSave: { scroll: {} },
+      },
     });
     fireEvent.click(screen.getByTestId("decrement-btn"));
     expect(screen.getByTestId("value-title")).toHaveTextContent("9");
@@ -20,7 +28,11 @@ describe("Counter", () => {
 
   test("increment", () => {
     componentRender(<Counter />, {
-      initialState: { counter: { value: 10 }, user: {} },
+      initialState: {
+        counter: { value: 10 },
+        user: {},
+        scrollSave: { scroll: {} },
+      },
     });
     fireEvent.click(screen.getByTestId("increment-btn"));
     expect(screen.getByTestId("value-title")).toHaveTextContent("11");

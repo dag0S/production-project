@@ -23,7 +23,7 @@ import { Text } from "shared/ui/text/Text";
 import { TextTheme } from "shared/ui/text/TextProps";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Page } from "shared/ui/page/Page";
+import { Page } from "widgets/page";
 
 const reducers: ReducersList = {
   profile: profileReducer,

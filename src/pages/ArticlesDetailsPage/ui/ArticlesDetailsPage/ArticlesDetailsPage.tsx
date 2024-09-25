@@ -20,7 +20,7 @@ import { addCommentForArticle } from "../../model/services/addCommentForArticle/
 import { Button } from "shared/ui/button/Button";
 import { ButtonTheme } from "shared/ui/button/ButtonProps";
 import { RoutePath } from "app/providers/router/config/routeConfig";
-import { Page } from "shared/ui/page/Page";
+import { Page } from "widgets/page";
 
 import styles from "./ArticlesDetailsPage.module.scss";
 

@@ -8,10 +8,12 @@ import { addNewCommentSchema } from "features/addNewComment";
 import { LoginSchema } from "features/authByUsername";
 import { ArticleDetailsCommentsSchema } from "pages/ArticlesDetailsPage";
 import { articlesPageSchema } from "pages/ArticlesPage";
+import { ScrollSaveSchema } from "widgets/page";
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  scrollSave: ScrollSaveSchema;
 
   // Асинхронные редюсеры
   loginFrom?: LoginSchema;
