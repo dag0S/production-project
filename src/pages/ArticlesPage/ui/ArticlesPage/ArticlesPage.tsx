@@ -10,7 +10,6 @@ import {
 } from "../../model/slices/articlesPageSlice";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
@@ -19,6 +18,7 @@ import {
 import { ArticleViewSelector } from "features/articleViewSelector";
 import { Page } from "shared/ui/page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -34,12 +34,7 @@ const ArticlesPage: FC = () => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(
-      fetchArticlesList({
-        page: 1,
-      })
-    );
+    dispatch(initArticlesPage());
   });
 
   const onLoadNextPart = useCallback(() => {
@@ -54,7 +49,7 @@ const ArticlesPage: FC = () => {
   );
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page className={styles["article-page"]} onScrollEnd={onLoadNextPart}>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
