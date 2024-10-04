@@ -1,10 +1,9 @@
 import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { ArticleList, ArticleView } from "entities/article";
+import { ArticleList } from "entities/article";
 import { ReducersList } from "shared/lib/components/dynamicModuleLoader/DynamicModuleLoaderProps";
 import { DynamicModuleLoader } from "shared/lib/components/dynamicModuleLoader/DynamicModuleLoader";
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles,
 } from "../../model/slices/articlesPageSlice";
@@ -15,10 +14,10 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
-import { ArticleViewSelector } from "features/articleViewSelector";
 import { Page } from "widgets/page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -41,17 +40,10 @@ const ArticlesPage: FC = () => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
-  const onChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view));
-    },
-    [dispatch]
-  );
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page className={styles["article-page"]} onScrollEnd={onLoadNextPart}>
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
       </Page>
     </DynamicModuleLoader>

@@ -1,0 +1,82 @@
+.BIG .card__header {
+  display: flex;
+  align-items: center;
+}
+.BIG .card__username {
+  margin-left: 8px;
+}
+.BIG .card__date {
+  margin-left: auto;
+}
+.BIG .card__title {
+  margin-top: 8px;
+}
+.BIG .card__img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 250px;
+  margin: 16px 0;
+}
+.BIG .card__text-block {
+  max-height: 200px;
+  overflow-y: hidden;
+  margin-bottom: 16px;
+}
+.BIG .card__views {
+  margin-left: auto;
+}
+.BIG .card__footer {
+  display: flex;
+  align-items: center;
+}
+
+.SMALL {
+  width: 230px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+.SMALL:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+}
+.SMALL:hover .card__date {
+  display: block;
+}
+.SMALL .card__img-wrapper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.SMALL .card__img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+.SMALL .card__date {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.SMALL .card__info-wrapper {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+.SMALL .card__types p {
+  width: 115px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.SMALL .card__views {
+  margin-left: auto;
+  margin-right: 8px;
+}
+.SMALL .card__title p {
+  margin-top: 8px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=ArticleListItem.module.css.map */

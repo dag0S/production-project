@@ -1,0 +1,9 @@
+.article-view-selector {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.not-selected {
+  fill: var(--secondary-color);
+}/*# sourceMappingURL=ArticleViewSelector.module.css.map */

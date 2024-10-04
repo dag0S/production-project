@@ -1,0 +1,10 @@
+.add-new-comment {
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-new-comment__input {
+  flex-grow: 1;
+}/*# sourceMappingURL=AddNewComment.module.css.map */

@@ -1,0 +1,18 @@
+.link {
+  color: var(--primary-color);
+}
+.link:hover {
+  opacity: 0.8;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--inverted-secondary-color);
+}
+
+.red {
+  color: red;
+}/*# sourceMappingURL=AppLink.module.css.map */

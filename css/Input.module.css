@@ -1,0 +1,48 @@
+.input-wrapper {
+  display: flex;
+  gap: 5px;
+  font: var(--font-m);
+}
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: transparent;
+  text-shadow: 0 0 0 var(--primary-color);
+}
+.input:focus {
+  outline: none;
+}
+
+.caret-wrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.caret {
+  height: 3px;
+  width: 9px;
+  background: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: blink 0.7s forwards infinite;
+}
+
+.readonly {
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=Input.module.css.map */

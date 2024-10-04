@@ -45,10 +45,10 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.pinimg.com/736x/76/e4/cf/76e4cff13fa43c636748295627a93fde.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1233,
+      "createdAt": "26.02.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["IT", "JavaScript"],
       "blocks": [
         {
           "id": 1,
@@ -115,10 +115,10 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdna.artstation.com/p/assets/covers/images/044/016/798/large/shady-tantawy-shady-tantawy-python-logo-4k-i6.jpg?1638884993",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 231,
+      "createdAt": "22.11.2019",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["IT", "Python"],
       "blocks": [
         {
           "id": 1,
@@ -185,10 +185,10 @@
       "title": "TypeScript",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--jVXUQryJ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://raw.githubusercontent.com/khaosdoctor/blog-assets/master/images/2020/08/microsoft-releases-typescript-2-0-and-other-javascript-news-508599-2.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 653,
+      "createdAt": "16.04.2021",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["IT", "JavaScript", "TypeScript"],
       "blocks": [
         {
           "id": 1,
@@ -207,10 +207,10 @@
       "title": "React для новичков",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.pinimg.com/originals/cc/a3/a7/cca3a781aad62c3017f56a3be6b39f5e.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 6333,
+      "createdAt": "21.01.2022",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["JavaScript", "Frontend", "React"],
       "blocks": [
         {
           "id": 1,
@@ -229,10 +229,10 @@
       "title": "The best way to use Redux",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=6328d4354a2f3bb4f71305fcb7c8a264_l-10353822-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 231,
+      "createdAt": "04.04.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Frontend", "Redux"],
       "blocks": [
         {
           "id": 1,
@@ -251,10 +251,10 @@
       "title": "Что такое Go?",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/570198170/f785f68a-1702-442f-ac6f-5d898279c23f",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 412,
+      "createdAt": "01.10.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend", "Go"],
       "blocks": [
         {
           "id": 1,
@@ -273,8 +273,8 @@
       "title": "Топ 10 расширений для VScode",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.ytimg.com/vi/KnnNAa6Y-0s/maxresdefault.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 673,
+      "createdAt": "26.02.2023",
       "userId": 1,
       "type": ["IT"],
       "blocks": [
@@ -295,10 +295,10 @@
       "title": "Чем так хорош язык C++",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65a60f2c5e8ea3669108d332_65a61120b563f7339ae9f406/scale_1200",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 12,
+      "createdAt": "05.03.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["C++", "Backend"],
       "blocks": [
         {
           "id": 1,
@@ -317,10 +317,10 @@
       "title": "Учимся создавать игры на Unity",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/272209037/08400700-c2e3-11ea-934d-9a5c9e1ca637",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 83,
+      "createdAt": "09.06.2022",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["IT", "Backend", "Unity", "Gamedev"],
       "blocks": [
         {
           "id": 1,
@@ -339,10 +339,10 @@
       "title": "Кто и зачем использует Linux?",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://firebasestorage.googleapis.com/v0/b/pepedocs-ecf95.appspot.com/o/lfs101x.jpg?alt=media",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 542,
+      "createdAt": "22.12.2023",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Linux", "OS"],
       "blocks": [
         {
           "id": 1,
@@ -361,10 +361,10 @@
       "title": "Ubuntu за 30 мин",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=96a51bbcd445183f1ebd7f951c8a9510_l-5233844-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 23,
+      "createdAt": "10.08.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["OS", "Linux"],
       "blocks": [
         {
           "id": 1,
@@ -383,10 +383,10 @@
       "title": "На каком языке написана GTA V",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=94b59083c191adebd80b6cd325dd7af4_l-5302022-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 789,
+      "createdAt": "11.08.2021",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Gamedev"],
       "blocks": [
         {
           "id": 1,
@@ -405,10 +405,10 @@
       "title": "Топ 5 свойство CSS, которые должен знать каждый разработчик",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/428080046/8073eeb4-3a1a-4066-ac50-4bf75259756c",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4550,
+      "createdAt": "27.07.2021",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["CSS", "Frontend"],
       "blocks": [
         {
           "id": 1,
@@ -427,10 +427,10 @@
       "title": "Что такое SASS/SCSS? Зачем нужны препроцессоры?",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.pinimg.com/736x/1e/e1/db/1ee1db8ba0f4ae9cec4de9ccc5681f5e.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 3090,
+      "createdAt": "06.06.2023",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["CSS", "Frontend"],
       "blocks": [
         {
           "id": 1,
@@ -449,10 +449,10 @@
       "title": "Как nodeJS изменил WEB",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://repository-images.githubusercontent.com/167420205/45626080-de70-11ea-9bc8-e87e81f18275",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 231,
+      "createdAt": "22.05.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend", "JavaScript", "NodeJS"],
       "blocks": [
         {
           "id": 1,
@@ -471,10 +471,10 @@
       "title": "Пишем свой YouTube на React",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://reactjsexample.com/content/images/2018/07/reactube-client.jpg",
-      "views": 1022,
+      "views": 5678,
       "createdAt": "26.02.2022",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["React", "Frontend"],
       "blocks": [
         {
           "id": 1,
@@ -490,13 +490,13 @@
     },
     {
       "id": 17,
-      "title": "TypeScript",
+      "title": "Что за слон ваш этот PHP?",
       "subtitle": "Что за слон ваш этот PHP?",
       "img": "https://chelcenter.susu.ru/chel-center.ru/php-yfc/wp-content/uploads/sites/14/2019/09/php-71.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 674,
+      "createdAt": "27.10.2022",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend", "PHP"],
       "blocks": [
         {
           "id": 1,
@@ -515,10 +515,10 @@
       "title": "REST API",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://i.pinimg.com/originals/86/b0/46/86b046f9c36059672065d60540e68404.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 864,
+      "createdAt": "13.07.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend"],
       "blocks": [
         {
           "id": 1,
@@ -537,10 +537,10 @@
       "title": "Как подключить БД к вашему проекту",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=15d2b327016d5b0949b3b1101fda0f3f_l-10652854-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 52,
+      "createdAt": "26.01.2023",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend", "SQL", "DataBase"],
       "blocks": [
         {
           "id": 1,
@@ -559,10 +559,10 @@
       "title": "Что такое Prisma",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatars.mds.yandex.net/i?id=8b4a547d5a9bc45beeec4812802b0b79034262aa-5433213-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 96,
+      "createdAt": "04.10.2024",
       "userId": 1,
-      "type": ["IT"],
+      "type": ["Backend", "DataBase"],
       "blocks": [
         {
           "id": 1,

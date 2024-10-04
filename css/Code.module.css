@@ -1,0 +1,15 @@
+.code {
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+  position: relative;
+  background: var(--code-bg);
+  overflow: auto;
+}
+.code__icon path {
+  stroke: var(--primary-color);
+}
+.code__copy-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}/*# sourceMappingURL=Code.module.css.map */

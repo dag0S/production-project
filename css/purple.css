@@ -1,0 +1,12 @@
+.app_purple_theme {
+  --bg-color: #f8f4fb;
+  --inverted-bg-color: #6c3487;
+  --primary-color: #2f296a;
+  --secondary-color: #a93aff;
+  --inverted-primary-color: #f8f4fb;
+  --inverted-secondary-color: #2f296a;
+  --skeleton-color: #df75ff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+  --code-bg: #e5c2ff;
+  --card-bg: #ecd6fd;
+}/*# sourceMappingURL=purple.css.map */
