@@ -42,7 +42,7 @@
 }
 
 .SMALL {
-  width: 230px;
+  width: 430px;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
 
@@ -57,14 +57,14 @@
 
   .card {
     &__img-wrapper {
-      width: 200px;
+      width: 100%;
       height: 200px;
       position: relative;
     }
 
     &__img {
       object-fit: cover;
-      width: 200px;
+      width: 100%;
       height: 200px;
     }
 
@@ -82,7 +82,7 @@
     }
 
     &__types p {
-      width: 115px;
+      width: 315px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

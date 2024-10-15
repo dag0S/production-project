@@ -8,12 +8,15 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { ArticleViewSelector } from "features/articleViewSelector";
 import {
   ArticleSortField,
   ArticleSortSelector,
+  ArticleType,
+  ArticleTypeTabs,
   ArticleView,
 } from "entities/article";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";
@@ -21,9 +24,10 @@ import { Card } from "shared/ui/card/Card";
 import { Input } from "shared/ui/input/Input";
 import { SortOrder } from "shared/types/SortOrder";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
+import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
+import { TabItem } from "shared/ui/tabs/TabsProps";
 
 import styles from "./ArticlesPageFilters.module.scss";
-import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 
 export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = ({
   className,
@@ -34,6 +38,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = ({
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
   const search = useSelector(getArticlesPageSearch);
+  const type = useSelector(getArticlesPageType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }));
@@ -75,6 +80,15 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = ({
     [dispatch, debouncedFetchData]
   );
 
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlesPageActions.setType(value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, debouncedFetchData]
+  );
+
   return (
     <div
       className={classNames(styles["articles-page-filters"], {}, [className])}
@@ -95,6 +109,11 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = ({
           value={search}
         />
       </Card>
+      <ArticleTypeTabs
+        className={styles["tabs"]}
+        value={type}
+        onChangeType={onChangeType}
+      />
     </div>
   );
 };

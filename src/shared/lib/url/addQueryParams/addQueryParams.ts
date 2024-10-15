@@ -7,7 +7,10 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
   });
   return `?${searchParams.toString()}`;
 }
-
+/**
+ * Ф-ция добавления параметров строки запроса в URL
+ * @param params
+ */
 export function addQueryParams(params: OptionalRecord<string, string>) {
-  window.history.pushState(null, getQueryParams(params));
+  window.history.pushState(null, "", getQueryParams(params));
 }

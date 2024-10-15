@@ -8,7 +8,10 @@ import { ArticleView, IArticle } from "entities/article";
 import { articlesPageSchema } from "../types/articlesPageSchema";
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from "shared/const/localstorage";
-import { ArticleSortField } from "entities/article/model/types/article";
+import {
+  ArticleSortField,
+  ArticleType,
+} from "entities/article/model/types/article";
 import { SortOrder } from "shared/types/SortOrder";
 
 const articlesAdapter = createEntityAdapter({
@@ -34,6 +37,7 @@ const articlesPageSlice = createSlice({
     sort: ArticleSortField.CREATED,
     search: "",
     order: "asc",
+    type: ArticleType.All,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -48,6 +52,9 @@ const articlesPageSlice = createSlice({
     },
     setSort: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload;
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
     },
     setSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload;
@@ -77,7 +84,7 @@ const articlesPageSlice = createSlice({
       })
       .addCase(fetchArticlesList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.hasMore = action.payload.length > 0;
+        state.hasMore = action.payload.length >= state.limit;
 
         if (action.meta.arg.replace) {
           articlesAdapter.setAll(state, action.payload);

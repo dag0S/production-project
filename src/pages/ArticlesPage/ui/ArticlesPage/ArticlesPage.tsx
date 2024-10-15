@@ -8,6 +8,7 @@ import {
   getArticles,
 } from "../../model/slices/articlesPageSlice";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useSearchParams } from "react-router-dom";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
   getArticlesPageError,
@@ -31,9 +32,10 @@ const ArticlesPage: FC = () => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
+  const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   const onLoadNextPart = useCallback(() => {

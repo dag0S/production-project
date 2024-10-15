@@ -40,9 +40,25 @@ export type ArticleBlock =
   | ArticleImageBlock;
 
 export enum ArticleType {
+  "All" = "All",
   "IT" = "IT",
-  "SCIENCE" = "SCIENCE",
-  "ECONOMICS" = "ECONOMICS",
+  "CSS" = "CSS",
+  "JavaScript" = "JavaScript",
+  "Python" = "Python",
+  "TypeScript" = "TypeScript",
+  "React" = "React",
+  "Frontend" = "Frontend",
+  "Redux" = "Redux",
+  "C++" = "C++",
+  "Backend" = "Backend",
+  "Unity" = "Unity",
+  "Gamedev" = "Gamedev",
+  "Linux" = "Linux",
+  "OS" = "OS",
+  "NodeJS" = "NodeJS",
+  "PHP" = "PHP",
+  "SQL" = "SQL",
+  "DataBase" = "DataBase",
 }
 
 export interface IArticle {
